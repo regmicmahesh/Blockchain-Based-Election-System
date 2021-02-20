@@ -4,7 +4,7 @@ from django.http import HttpRequest
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
-from users.models import User
+from users.models import User, Voter
 from django.shortcuts import redirect
 from django.conf import settings
 # Create your views here.
@@ -56,14 +56,19 @@ class SignupView(View):
             citizenship_number = request.POST.get("citizenship_number")
             password = request.POST.get("password")
             confirm_password = request.POST.get("confirm_password")
+              # print(request.FILES)
             user = User.objects.create_user(username=username, first_name=first_name, last_name=last_name,password=password)
             user.citizenship_number = citizenship_number
-            # print(request.FILES)
+          
             image = request.FILES['image']
             handle_uploaded_file(image)
-            user.image = image.name
-            # breakpoint()
-            #TODO: VAlidate everything.
+            user.image = "profile_pictures/" + image.name
+            user.save()
+
+            voter = Voter.objects.create(user=user)
+            voter.save()
+            return redirect("/")
+            
 
 
 

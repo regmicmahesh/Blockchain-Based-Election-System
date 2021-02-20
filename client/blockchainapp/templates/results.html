@@ -81,8 +81,9 @@
           <h2>Choose your leader</h2>
           <br />
 
-          <form method="post" id="form" enctype="multipart/form-data">
-            {% csrf_token %}
+          <!-- <div> FORM KO SATTA -->
+            <div>
+           
             <div class="art-layout-cell layout-item-0">
               <div class="card">
                 <p style="text-align: center" class="mt-5">
@@ -94,7 +95,7 @@
                         font-size: 20px;
                       "
                     >
-                      VOTING CLOSING IN - {{election.expiry_date}}
+                      VOTING CLOSED IN - {{election.expiry_date}}
                     </span>
                   </marquee>
                 </p>
@@ -123,11 +124,12 @@
                           </p>
                         </div>
 
-                        <div class="card-footer">
-                          {{candidate.user.first_name | title}}
-                          {{candidate.user.last_name | title}} <input
-                          type="checkbox" name="votedId" id="" value="{{candidate.user.pk}}" />
+                        <div class="card">
+                          <div class="card-footer">
+                            Votes: {{candidate.votes}}
+                          </div>
                         </div>
+      
                       </div>
                     </div>
                     {% endfor %}
@@ -135,70 +137,16 @@
                 </div>
               </div>
             </div>
-            <center>
-              <button
-                type="button"
-                class="btn btn-primary my-3 btn-block"
-                data-toggle="modal"
-                data-target="#exampleModal"
-              >
-                Vote
-              </button>
-            </center>
-
-            <!-- Modal -->
-            <div
-              class="modal fade"
-              id="exampleModal"
-              tabindex="-1"
-              role="dialog"
-              aria-labelledby="exampleModalLabel"
-              aria-hidden="true"
-            >
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Vote</h5>
-                    <button
-                      type="button"
-                      class="close"
-                      data-dismiss="modal"
-                      aria-label="Close"
-                    >
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">Vote Your Leader</div>
-                  <div class="modal-footer">
-                    <button
-                      type="button"
-                      class="btn btn-secondary"
-                      data-dismiss="modal"
-                    >
-                      No
-                    </button>
-                    <button type="button" onclick="submitForm()" class="btn btn-primary">Yes</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </form>
+           
+          
+          </div>
         </div>
       </div>
 
       {% endfor %}
     </div>
 
-    <script>
-      function submitForm(){
-
-        form = document.getElementById("form")
-        form.submit()
-
-      }
-      
-      
-    </script>
+   
   </body>
   <script
     src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
