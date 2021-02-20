@@ -7,7 +7,7 @@ from django.contrib.auth.models import AbstractUser
 
 class User(AbstractUser):
     public_key = models.CharField(max_length=128)
-    image = models.ImageField(upload_to="profile_pictures")
+    image = models.ImageField(upload_to="profile_pictures",null=True,blank=True)
     citizenship_number = models.CharField(max_length=100)
 
 class Voter(models.Model):

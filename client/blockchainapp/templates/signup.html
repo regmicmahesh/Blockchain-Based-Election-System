@@ -63,6 +63,7 @@
            </h3>
 
             <form method="POST" enctype="multipart/form-data">
+              {% csrf_token %}
                 <div class="form-group">
                     <label>First Name</label>
                     <input type="text" name="first_name"  class="form-control form-control" aria-describedby="emailHelp">
@@ -86,7 +87,7 @@
                 
                 <div class="form-group">
                   <label for="exampleInputEmail1">Citizenship Number</label>
-                  <input type="number" name="citizenship_number"  class=" form-control form-control"  aria-describedby="emailHelp">
+                  <input type="text" name="citizenship_number"  class=" form-control form-control"  aria-describedby="emailHelp">
            
                 </div>
                 <div class="form-group">
@@ -97,6 +98,11 @@
                 <div class="form-group">
                   <label for="password">Confirm Password</label>
                   <input type="password" name="confirm_password"  class=" form-control form-control" id="password">
+                </div>
+
+                <div class="form-group">
+                  <label for="profile-picture">User Image</label>
+                  <input type="file" name="image" class="form-control-file" id="profile-picture" accept="image/*" required>
                 </div>
              
                 <button type="submit" class="btn btn-secondary border border-dark ">Submit</button>
