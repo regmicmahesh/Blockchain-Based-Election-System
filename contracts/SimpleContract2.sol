@@ -18,6 +18,36 @@ abstract contract Authority {
     // triggered on successful addition to branches
     event Register(address whom, address who, string Id);
 
+    // triggered when distributing 
+    event Distribution(uint ammount, uint total, address by);
+
+    // this function will distribute ethers
+    function Distribute(uint256 value) public {
+        require(
+            value * branches.length <= address(self).balance,
+            "Insufficient balance"
+        );
+
+        for (uint256 i = 0; i < branches.length; ++i) {
+            payable(branches[i]).transfer(value);
+        }
+        emit Distribution(value, value * branches.length, address(self));
+    }
+
+    // this function returs the balance of contract as well as the total balance of its branches
+    function GetBalance()
+        public
+        view
+        override
+        returns (uint256 selfBalance, uint256 branchBalance)
+    {
+        uint256 total;
+        for (uint256 i = 0; i < branches.length; ++i) {
+            total += branches[i].balance;
+        }
+        return (address(this).balance, total);
+    }
+
     // fuctions to allow contract to hold credits
     fallback() external payable {}
 
@@ -33,34 +63,6 @@ contract majorAuthority is Root, Authority {
         branches.push(newAddress);
         emit Register(newAddress, self, "E_authority");
     }
-
-    function Distribute(uint256 value) public {
-        require(
-            value * branches.length <= address(self).balance,
-            "Insufficient balance"
-        );
-
-        for (uint256 i = 0; i < branches.length; ++i) {
-            payable(branches[i]).transfer(value);
-        }
-    }
-
-    function GetBalance()
-        public
-        view
-        override
-        returns (uint256 selfBalance, uint256 branchBalance)
-    {
-        uint256 total;
-        for (uint256 i = 0; i < branches.length; ++i) {
-            total += branches[i].balance;
-        }
-        return (address(this).balance, total);
-    }
-
-    fallback() external payable override {
-        Distribute(address(self).balance / branches.length);
-    }
 }
 
 contract subAuthority is Root, Authority {
@@ -73,31 +75,4 @@ contract subAuthority is Root, Authority {
         emit Register(newAddress, self, "R_authority");
     }
 
-    function GetBalance()
-        public
-        view
-        override
-        returns (uint256 selfBalance, uint256 branchesBalance)
-    {
-        uint256 total;
-        for (uint256 i = 0; i < branches.length; ++i) {
-            total += branches[i].balance;
-        }
-        return (address(this).balance, total);
-    }
-
-    function Distribute(uint256 value) public {
-        require(
-            value * branches.length <= address(self).balance,
-            "Insufficient balance"
-        );
-
-        for (uint256 i = 0; i < branches.length; ++i) {
-            payable(branches[i]).transfer(value);
-        }
-    }
-
-    fallback() external payable override {
-        Distribute(address(self).balance / branches.length);
-    }
 }
