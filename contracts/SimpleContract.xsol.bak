@@ -1,0 +1,123 @@
+pragma solidity >=0.5.0;
+
+import "https://github.com/ethereum/dapp-bin/blob/master/library/stringUtils.sol" as stringUtils;
+
+contract Vote {
+    struct ElectionManager {
+        string name;
+        bool created;
+    }
+
+    struct Candidate {
+        string name;
+        uint256 votes;
+        bool created;
+    }
+
+    struct Voter {
+        string name;
+        bool voted;
+        bool created;
+    }
+
+    struct Election {
+        string area_code;
+        Candidate[] candidates;
+        Voter[] voters;
+        bool created;
+    }
+
+    mapping(address => Candidate) public candidates;
+
+    mapping(address => Voter) public voters;
+
+    mapping(address => ElectionManager) public electionManagers; 
+
+    Election[] public elections;
+
+    function createElection(string memory area_code) public{
+        
+        require(electionManagers[msg.sender].created);
+        Voter[] memory voters;
+        Candidate[] memory candidatez;
+        Election memory election = Election({area_code: area_code, created: true, voters: voters, candidates: candidatez});
+
+    }
+
+    function findElectionByAreaCode(string memory area_code) internal view returns(uint idx){
+
+        for(uint i = 0; i < elections.length; i++){
+            if(stringUtils.equal(area_code, elections[i].area_code)){
+
+                return i;
+
+            }
+        }
+        return -1;
+    }
+
+    function addVoterToElection(address voterCode, string memory area_code) public {
+
+         require(electionManagers[msg.sender].created);
+         require(voters[voterCode].created);
+         require(findElectionByAreaCode(area_code) != -1);
+        
+        election = elections[findElectionByAreaCode(area_code)];
+        election.voters.push(voters[voterCode]);
+
+    }
+
+
+    function addCandidateToElection(address candidateCode, string memory area_code) public {
+
+         require(electionManagers[msg.sender].created);
+         require(candidates[candidateCode].created);
+         require(findElectionByAreaCode(area_code) != -1);
+        
+        election = elections[findElectionByAreaCode(area_code)];
+        election.candidates.push(voters[candidateCode]);
+
+    }
+
+    function createVoter(string memory name, address election) public {
+        //Checking if voter is not present as candidate
+        require(!candidates[msg.sender].created);
+
+        //Checking if sender is not already present as voter
+        require(!voters[msg.sender].created);
+
+        voters[msg.sender] = Voter({name: name, voted: false, created: true});
+    }
+
+    function createCandidate(string memory name, address election) public {
+        //checking if election exists
+        // TODO: Fix this
+        // require(!elections[election].created);
+
+        //Checking if voter is not present as candidate
+        require(!candidates[msg.sender].created);
+
+        //Checking if sender is not already present as voter
+        require(!voters[msg.sender].created);
+
+        candidates[msg.sender] = Candidate({
+            name: name,
+            votes: 0,
+            created: true
+        });
+    }
+
+    function doVote(address candidate, address election) public {
+        //checking if election exists
+        require(elections[election].created);
+
+        //Checking if voter is not present as candidate
+        require(candidates[candidate].created);
+
+        //Checking if sender is not already present as voter
+        require(voters[msg.sender].created);
+
+        candidates[candidate].votes++;
+        voters[msg.sender].voted = true;
+    }
+}

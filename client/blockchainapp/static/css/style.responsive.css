@@ -1,0 +1,343 @@
+/* Created by Artisteer v4.3.0.60745 */
+
+.responsive body
+{
+   min-width: 240px;
+}
+  
+.responsive img 
+{
+   -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+   box-sizing: border-box;
+}  
+  
+.responsive .art-content-layout img,
+.responsive .art-content-layout video
+{
+   max-width: 100%;
+   height: auto !important;
+}
+
+.responsive.responsive-phone .art-content-layout img 
+{
+   margin: 1%;
+}
+
+.responsive.responsive-phone .art-collage,
+.responsive.responsive-tablet .art-collage {
+   margin: 0 !important;
+}
+
+.responsive .art-content-layout .art-sidebar0, 
+.responsive .art-content-layout .art-sidebar1, 
+.responsive .art-content-layout .art-sidebar2 
+{
+   width: auto !important;
+}
+    
+.responsive .art-content-layout, 
+.responsive .art-content-layout-row, 
+.responsive .art-layout-cell 
+{
+   display: block;
+}
+
+.responsive .art-content-layout, 
+.responsive .art-content-layout-row
+{
+   padding: 0;
+}
+    
+.responsive .image-caption-wrapper 
+{
+   width: auto;
+}
+
+.responsive.responsive-tablet .art-vmenublock,
+.responsive.responsive-tablet .art-block
+{
+   margin-left: 1%;
+   margin-right: 1%;
+   width: 48%;
+   float: left;
+   -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+   box-sizing: border-box;
+}
+
+.responsive .art-responsive-embed 
+{
+   height: 0;
+   padding-bottom: 56.25%;
+   /* 16:9 */
+    position: relative;
+}
+
+.responsive .art-responsive-embed iframe,
+.responsive .art-responsive-embed object,
+.responsive .art-responsive-embed embed
+{
+   height: 100%;
+   left: 0;
+   position: absolute;
+   top: 0;
+   width: 100%;
+}
+
+.responsive .art-header 
+{
+   width: auto !important;
+   max-width: none !important;
+   min-height: 100px !important;
+   min-width: 0 !important;
+   margin-right: 1% !important;
+   margin-left: 1% !important;
+   text-align: center;
+}
+
+.default-responsive .art-header 
+{
+   height: auto;
+}
+
+.default-responsive .art-header *
+{
+   position: relative;
+   text-align: center;
+   -webkit-transform: none !important;
+   -moz-transform: none !important;
+   -o-transform: none !important;
+   -ms-transform: none !important;
+   transform: none !important;
+}
+
+.default-responsive .art-header .art-headline, 
+.default-responsive .art-header .art-slogan 
+{
+   display: block !important;
+   top: 0 !important;
+   left: 0 !important;
+   margin: 2% !important;
+   text-align: center !important;
+}
+    
+.default-responsive .art-header .art-headline a, 
+.default-responsive .art-header .art-slogan 
+{
+   white-space: normal !important;
+}
+
+.default-responsive .art-header .art-logo
+{
+   display: inline-block;
+   margin: auto !important;
+   left: auto;
+   top: auto !important;
+   width: auto;
+   height: auto;
+}
+
+.responsive .art-header .art-slidenavigator 
+{
+   position: absolute;
+}
+
+.default-responsive .art-header .art-positioncontrol 
+{
+   display: block !important;
+   position: relative !important;
+   top: auto !important;
+   right: auto !important;
+   bottom: auto !important;
+   left: auto !important;
+   margin: 2% auto !important;
+   width: auto !important;
+   height: auto !important;
+}
+
+.responsive .art-header #art-flash-area
+{
+   display: none;
+}
+
+/* Search and other elements in header element directly */
+.default-responsive .art-header>.art-textblock
+{
+   position: relative !important;
+   display: block !important;
+   margin: 1% auto !important;
+   width: 75% !important;
+   top: auto !important;
+   right: auto !important;
+   bottom: auto !important;
+   left: auto !important;
+}
+
+.default-responsive .art-header .art-textblock 
+{
+   position: relative !important;
+   display: block !important;
+   margin: auto !important;
+   left: 0 !important;
+   right: 0 !important;
+   top: auto !important;
+   height: auto !important;
+   width: auto;
+   background-image: none;
+}
+
+/* '.art-header *' used noram align, but for '.art-textblock *' we must force align because of preview */
+.responsive .art-header .art-textblock *
+{
+   text-align: center !important;
+}
+
+.default-responsive .art-header .art-shapes > .art-textblock,
+.default-responsive .art-header .art-slide-item > .art-textblock
+{
+   display: none !important;
+}
+
+.default-responsive .art-header .art-shapes > .art-textblock *
+{
+   text-align: center !important;
+   width: auto !important;
+   height: auto !important;
+   display: block;
+}
+
+.default-responsive .art-header .art-slider .art-textblock *
+{
+   text-align: center !important;
+   width: auto !important;
+   height: auto !important;
+   display: block;
+}
+
+/* For icons like facebook, rss, etc. */
+.responsive .art-header>.art-textblock>div 
+{
+   width: 100%;
+}
+.responsive .art-sheet
+{
+   width: auto !important;
+   min-width: 240px !important;
+   max-width: none !important;
+   margin-right: 1% !important;
+   margin-left: 1% !important;
+}
+
+#art-resp {
+   display: none;
+}
+
+@media all and (max-width: 768px)
+{
+    #art-resp, #art-resp-t { display: block; }
+    #art-resp-m { display: none; }
+}
+
+@media all and (max-width: 480px)
+{
+    #art-resp, #art-resp-m { display: block; }
+    #art-resp-t { display: none; }
+}
+
+#art-resp-desktop {
+   display: none;
+}
+#art-resp-tablet-landscape {
+   display: none;
+}
+#art-resp-tablet-portrait {
+   display: none;
+}
+#art-resp-phone-landscape {
+   display: none;
+}
+#art-resp-phone-portrait {
+   display: none;
+}
+
+@media (min-width: 1200px)
+{
+    #art-resp-desktop { display: block; }
+}
+
+@media (min-width: 980px) and (max-width: 1199px)
+{
+    #art-resp-tablet-landscape { display: block; }
+}
+
+@media (min-width: 768px) and (max-width: 979px)
+{
+    #art-resp-tablet-portrait { display: block; }
+}
+
+@media (min-width: 480px) and (max-width: 767px)
+{
+    #art-resp-phone-landscape { display: block; }
+}
+
+@media (max-width: 479px)
+{
+    #art-resp-phone-portrait { display: block; }
+}
+.responsive .art-content-layout, 
+.responsive .art-content-layout-row, 
+.responsive .art-layout-cell 
+{
+   display: block;
+}
+
+.responsive .art-layout-cell 
+{
+   width: auto !important;
+   height: auto !important;
+}
+
+.responsive .art-content-layout:after, 
+.responsive .art-content-layout-row:after, 
+.responsive .art-layout-cell:after 
+{
+   content: ".";
+   display: block;
+   height: 0;
+   clear: both;
+   visibility: hidden;
+}
+
+.responsive .responsive-tablet-layout-cell,
+.responsive.responsive-tablet .art-footer .art-content-layout .art-layout-cell 
+{
+   margin: 1%;
+   width: 98% !important;
+   float: left;
+   -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+   box-sizing: border-box;
+}
+
+.responsive .responsive-layout-row-2 .responsive-tablet-layout-cell,
+.responsive.responsive-tablet .art-footer .art-content-layout .responsive-layout-row-2 .art-layout-cell
+{
+   width: 48% !important;
+}
+
+.responsive .responsive-layout-row-3 .responsive-tablet-layout-cell,
+.responsive.responsive-tablet .art-footer .art-content-layout .responsive-layout-row-3 .art-layout-cell
+{
+   width: 31% !important;
+}
+.responsive .art-post
+{
+   border-radius: 0;
+}
+
+.responsive .art-footer-inner
+{
+   min-width: 0;
+}
+

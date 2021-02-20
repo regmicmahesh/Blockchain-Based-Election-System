@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <title>Vote</title>
+        <!--[if lt IE 9]><script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+        <link rel="stylesheet" href="styles/style.css" media="screen">
+        <!--[if lte IE 7]><link rel="stylesheet" href="style.ie7.css" media="screen" /><![endif]-->
+        <link rel="stylesheet" href="styles/style.responsive.css" media="all">
+    <style>
+
+        h1{
+            text-align: center;
+            color: rgb(0, 121, 158);
+        }
+        h2{
+            text-align: center;
+            font-size: smaller;
+            color: rgb(0, 121, 158);
+
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Vote Me</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="profiles.html">Candidates</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="chart.html">Chart</a>
+              </li> 
+               <li class="nav-item active">
+                <a class="nav-link" href="vote.html">Vote</a>
+              </li>
+         
+          </ul>
+
+          <ul class="navbar-nav my-2 my-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" href="">You are logged in as:  <span class="sr-only">(current)</span></a>
+            </li>  
+          </ul>
+
+          
+        </div>
+    </nav>
+    <h1>2021 Election</h1>
+    <h2>Choose your leader</h2>
+    <br>
+    <div class="container">
+        <div class="art-sheet clearfix">
+            <div class="art-layout-wrapper">
+                <div class="art-content-layout">
+                    <div class="art-content-layout-row">
+                        <div class="art-layout-cell art-content"><article class="art-post art-article">
+                                
+                                                
+                <div class="art-postcontent art-postcontent-0 clearfix">
+                	<div class="art-content-layout">
+    <div class="art-content-layout-row">
+    	        	
+    <form method="post" action="vote.php" enctype='multipart/form-data'>        		
+
+    <div class="art-layout-cell layout-item-0" style="width: 50%" >
+     
+        	<p style="text-align: center;">
+        	<span style="font-weight: bold; font-family: 'Courier New'; font-size: 20px;">
+        		VOTE </span>
+        	</p>
+        	
+            <div class="row row-cols-1 row-cols-md-3 g-2">
+                <div class="col">
+                  <div class="card h-100">
+                    <img src="images/kp.jpg" class="img-thumbnail" alt="KPOLI">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    </div>
+                    <div class="card-footer ">KP OLI
+                        <input type="checkbox" name="" id="">
+                      </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card h-100">
+                    <img src="images/prachanda.jpeg" class="img-thumbnail" alt="prachanda" min-height=>
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                    </div>
+                    <div class="card-footer ">Prachanda
+                      <input type="checkbox" name="" id="">
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card h-100">
+                    <img src="images/makune.jpeg" class="img-thumbnail" alt="makune">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                    </div>
+                    <div class="card-footer ">Madhav Kumar Nepal
+                        <input type="checkbox" name="" id="">
+                      </div>
+                  </div>
+                </div>
+              </div>
+       <p style="text-align: left;" class="options"><span style="font-size: 2px; font-family: 'Courier New'; ">
+    </span>
+    <!-- <div class="test">
+        <span>
+            Select District:<select  name="district"   id='district' > 
+                                    <option value="" disabled selected>Caste your vote wisely</option>
+                                    <option>Kathmandu</option>
+                                    <option>Pokhara</option>
+                                    <option>Gorkha</option>
+                                    <option>Dhading</option>
+                                    <option>Nuwakot</option>
+                                    <option>Janakpur</option>
+                                    <option>Chitwan</option>
+                                    
+    
+                                                                                                  
+                                       </select>
+        </span>
+        
+        
+  
+    </div> -->
+      
+            <!-- Button trigger modal -->
+        <center>
+          <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#exampleModal">
+            Vote
+          </button>
+        </center>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Vote</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                Vote Your Leader
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                <button type="button" class="btn btn-primary">Yes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+   </p>
+    </div>
+    </form>  
+    </div>
+</div>
+
+</div>
+
+
+</article></div>
+                    </div>
+                </div>
+            </div>
+
+    </div>
+
+
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+<script>
+
+$('input[type="checkbox"]').on('change', function() {
+   $('input[type="checkbox"]').not(this).prop('checked', false);
+});
+
+</script>
+</html>
