@@ -27,21 +27,14 @@
   "ast": {
     "absolutePath": "/home/regmicmahesh/blockchain/hackathon-ku/contracts/MoneySender.sol",
     "exportedSymbols": {
-      "MoneySender": [
-        47
-      ]
+      "MoneySender": [47]
     },
     "id": 48,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 34,
-        "literals": [
-          "solidity",
-          ">=",
-          "0.5",
-          ".0"
-        ],
+        "literals": ["solidity", ">=", "0.5", ".0"],
         "nodeType": "PragmaDirective",
         "src": "0:24:1"
       },
@@ -52,9 +45,7 @@
         "documentation": null,
         "fullyImplemented": true,
         "id": 47,
-        "linearizedBaseContracts": [
-          47
-        ],
+        "linearizedBaseContracts": [47],
         "name": "MoneySender",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -205,20 +196,13 @@
     "attributes": {
       "absolutePath": "/home/regmicmahesh/blockchain/hackathon-ku/contracts/MoneySender.sol",
       "exportedSymbols": {
-        "MoneySender": [
-          47
-        ]
+        "MoneySender": [47]
       }
     },
     "children": [
       {
         "attributes": {
-          "literals": [
-            "solidity",
-            ">=",
-            "0.5",
-            ".0"
-          ]
+          "literals": ["solidity", ">=", "0.5", ".0"]
         },
         "id": 34,
         "name": "PragmaDirective",
@@ -226,18 +210,12 @@
       },
       {
         "attributes": {
-          "baseContracts": [
-            null
-          ],
-          "contractDependencies": [
-            null
-          ],
+          "baseContracts": [null],
+          "contractDependencies": [null],
           "contractKind": "contract",
           "documentation": null,
           "fullyImplemented": true,
-          "linearizedBaseContracts": [
-            47
-          ],
+          "linearizedBaseContracts": [47],
           "name": "MoneySender",
           "scope": 48
         },
@@ -248,9 +226,7 @@
               "implemented": true,
               "isConstructor": false,
               "kind": "function",
-              "modifiers": [
-                null
-              ],
+              "modifiers": [null],
               "name": "sendMoney",
               "scope": 47,
               "stateMutability": "nonpayable",
@@ -294,9 +270,7 @@
               },
               {
                 "attributes": {
-                  "parameters": [
-                    null
-                  ]
+                  "parameters": [null]
                 },
                 "children": [],
                 "id": 38,
@@ -315,9 +289,7 @@
                           "isPure": false,
                           "isStructConstructorCall": false,
                           "lValueRequested": false,
-                          "names": [
-                            null
-                          ],
+                          "names": [null],
                           "type": "tuple()",
                           "type_conversion": false
                         },
@@ -342,9 +314,7 @@
                               {
                                 "attributes": {
                                   "argumentTypes": null,
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
+                                  "overloadedDeclarations": [null],
                                   "referencedDeclaration": 36,
                                   "type": "address payable",
                                   "value": "rec"

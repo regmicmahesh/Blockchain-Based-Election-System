@@ -2839,18 +2839,10 @@
   "ast": {
     "absolutePath": "/home/regmicmahesh/Programming/blockchain/simpleblockchain/contracts/SimpleContract2.sol",
     "exportedSymbols": {
-      "Authority": [
-        71
-      ],
-      "Root": [
-        46
-      ],
-      "majorAuthority": [
-        187
-      ],
-      "subAuthority": [
-        305
-      ]
+      "Authority": [71],
+      "Root": [46],
+      "majorAuthority": [187],
+      "subAuthority": [305]
     },
     "id": 306,
     "license": "MIT",
@@ -2858,15 +2850,7 @@
     "nodes": [
       {
         "id": 34,
-        "literals": [
-          "solidity",
-          ">=",
-          "0.8",
-          ".0",
-          "<",
-          "0.9",
-          ".0"
-        ],
+        "literals": ["solidity", ">=", "0.8", ".0", "<", "0.9", ".0"],
         "nodeType": "PragmaDirective",
         "src": "32:31:1"
       },
@@ -2877,9 +2861,7 @@
         "contractKind": "contract",
         "fullyImplemented": false,
         "id": 46,
-        "linearizedBaseContracts": [
-          46
-        ],
+        "linearizedBaseContracts": [46],
         "name": "Root",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -3029,9 +3011,7 @@
         "contractKind": "contract",
         "fullyImplemented": false,
         "id": 71,
-        "linearizedBaseContracts": [
-          71
-        ],
+        "linearizedBaseContracts": [71],
         "name": "Authority",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -3317,18 +3297,11 @@
             "src": "715:9:1"
           }
         ],
-        "contractDependencies": [
-          46,
-          71
-        ],
+        "contractDependencies": [46, 71],
         "contractKind": "contract",
         "fullyImplemented": true,
         "id": 187,
-        "linearizedBaseContracts": [
-          187,
-          71,
-          46
-        ],
+        "linearizedBaseContracts": [187, 71, 46],
         "name": "majorAuthority",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -3422,9 +3395,7 @@
             "visibility": "public"
           },
           {
-            "baseFunctions": [
-              54
-            ],
+            "baseFunctions": [54],
             "body": {
               "id": 102,
               "nodeType": "Block",
@@ -3831,10 +3802,7 @@
                       "id": 108,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4294967278,
-                        4294967278
-                      ],
+                      "overloadedDeclarations": [4294967278, 4294967278],
                       "referencedDeclaration": 4294967278,
                       "src": "1077:7:1",
                       "typeDescriptions": {
@@ -4064,9 +4032,7 @@
                   },
                   "id": 144,
                   "initializationExpression": {
-                    "assignments": [
-                      123
-                    ],
+                    "assignments": [123],
                     "declarations": [
                       {
                         "constant": false,
@@ -4205,18 +4171,14 @@
             "visibility": "public"
           },
           {
-            "baseFunctions": [
-              45
-            ],
+            "baseFunctions": [45],
             "body": {
               "id": 185,
               "nodeType": "Block",
               "src": "1454:185:1",
               "statements": [
                 {
-                  "assignments": [
-                    155
-                  ],
+                  "assignments": [155],
                   "declarations": [
                     {
                       "constant": false,
@@ -4397,9 +4359,7 @@
                   },
                   "id": 176,
                   "initializationExpression": {
-                    "assignments": [
-                      158
-                    ],
+                    "assignments": [158],
                     "declarations": [
                       {
                         "constant": false,
@@ -4705,18 +4665,11 @@
             "src": "1674:9:1"
           }
         ],
-        "contractDependencies": [
-          46,
-          71
-        ],
+        "contractDependencies": [46, 71],
         "contractKind": "contract",
         "fullyImplemented": true,
         "id": 305,
-        "linearizedBaseContracts": [
-          305,
-          71,
-          46
-        ],
+        "linearizedBaseContracts": [305, 71, 46],
         "name": "subAuthority",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -4840,9 +4793,7 @@
             "visibility": "public"
           },
           {
-            "baseFunctions": [
-              54
-            ],
+            "baseFunctions": [54],
             "body": {
               "id": 220,
               "nodeType": "Block",
@@ -5066,18 +5017,14 @@
             "visibility": "public"
           },
           {
-            "baseFunctions": [
-              45
-            ],
+            "baseFunctions": [45],
             "body": {
               "id": 260,
               "nodeType": "Block",
               "src": "2056:185:1",
               "statements": [
                 {
-                  "assignments": [
-                    230
-                  ],
+                  "assignments": [230],
                   "declarations": [
                     {
                       "constant": false,
@@ -5258,9 +5205,7 @@
                   },
                   "id": 251,
                   "initializationExpression": {
-                    "assignments": [
-                      233
-                    ],
+                    "assignments": [233],
                     "declarations": [
                       {
                         "constant": false,
@@ -5718,10 +5663,7 @@
                       "id": 266,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4294967278,
-                        4294967278
-                      ],
+                      "overloadedDeclarations": [4294967278, 4294967278],
                       "referencedDeclaration": 4294967278,
                       "src": "2299:7:1",
                       "typeDescriptions": {
@@ -5951,9 +5893,7 @@
                   },
                   "id": 302,
                   "initializationExpression": {
-                    "assignments": [
-                      281
-                    ],
+                    "assignments": [281],
                     "declarations": [
                       {
                         "constant": false,
@@ -6101,18 +6041,10 @@
   "legacyAST": {
     "absolutePath": "/home/regmicmahesh/Programming/blockchain/simpleblockchain/contracts/SimpleContract2.sol",
     "exportedSymbols": {
-      "Authority": [
-        71
-      ],
-      "Root": [
-        46
-      ],
-      "majorAuthority": [
-        187
-      ],
-      "subAuthority": [
-        305
-      ]
+      "Authority": [71],
+      "Root": [46],
+      "majorAuthority": [187],
+      "subAuthority": [305]
     },
     "id": 306,
     "license": "MIT",
@@ -6120,15 +6052,7 @@
     "nodes": [
       {
         "id": 34,
-        "literals": [
-          "solidity",
-          ">=",
-          "0.8",
-          ".0",
-          "<",
-          "0.9",
-          ".0"
-        ],
+        "literals": ["solidity", ">=", "0.8", ".0", "<", "0.9", ".0"],
         "nodeType": "PragmaDirective",
         "src": "32:31:1"
       },
@@ -6139,9 +6063,7 @@
         "contractKind": "contract",
         "fullyImplemented": false,
         "id": 46,
-        "linearizedBaseContracts": [
-          46
-        ],
+        "linearizedBaseContracts": [46],
         "name": "Root",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -6291,9 +6213,7 @@
         "contractKind": "contract",
         "fullyImplemented": false,
         "id": 71,
-        "linearizedBaseContracts": [
-          71
-        ],
+        "linearizedBaseContracts": [71],
         "name": "Authority",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -6579,18 +6499,11 @@
             "src": "715:9:1"
           }
         ],
-        "contractDependencies": [
-          46,
-          71
-        ],
+        "contractDependencies": [46, 71],
         "contractKind": "contract",
         "fullyImplemented": true,
         "id": 187,
-        "linearizedBaseContracts": [
-          187,
-          71,
-          46
-        ],
+        "linearizedBaseContracts": [187, 71, 46],
         "name": "majorAuthority",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -6684,9 +6597,7 @@
             "visibility": "public"
           },
           {
-            "baseFunctions": [
-              54
-            ],
+            "baseFunctions": [54],
             "body": {
               "id": 102,
               "nodeType": "Block",
@@ -7093,10 +7004,7 @@
                       "id": 108,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4294967278,
-                        4294967278
-                      ],
+                      "overloadedDeclarations": [4294967278, 4294967278],
                       "referencedDeclaration": 4294967278,
                       "src": "1077:7:1",
                       "typeDescriptions": {
@@ -7326,9 +7234,7 @@
                   },
                   "id": 144,
                   "initializationExpression": {
-                    "assignments": [
-                      123
-                    ],
+                    "assignments": [123],
                     "declarations": [
                       {
                         "constant": false,
@@ -7467,18 +7373,14 @@
             "visibility": "public"
           },
           {
-            "baseFunctions": [
-              45
-            ],
+            "baseFunctions": [45],
             "body": {
               "id": 185,
               "nodeType": "Block",
               "src": "1454:185:1",
               "statements": [
                 {
-                  "assignments": [
-                    155
-                  ],
+                  "assignments": [155],
                   "declarations": [
                     {
                       "constant": false,
@@ -7659,9 +7561,7 @@
                   },
                   "id": 176,
                   "initializationExpression": {
-                    "assignments": [
-                      158
-                    ],
+                    "assignments": [158],
                     "declarations": [
                       {
                         "constant": false,
@@ -7967,18 +7867,11 @@
             "src": "1674:9:1"
           }
         ],
-        "contractDependencies": [
-          46,
-          71
-        ],
+        "contractDependencies": [46, 71],
         "contractKind": "contract",
         "fullyImplemented": true,
         "id": 305,
-        "linearizedBaseContracts": [
-          305,
-          71,
-          46
-        ],
+        "linearizedBaseContracts": [305, 71, 46],
         "name": "subAuthority",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -8102,9 +7995,7 @@
             "visibility": "public"
           },
           {
-            "baseFunctions": [
-              54
-            ],
+            "baseFunctions": [54],
             "body": {
               "id": 220,
               "nodeType": "Block",
@@ -8328,18 +8219,14 @@
             "visibility": "public"
           },
           {
-            "baseFunctions": [
-              45
-            ],
+            "baseFunctions": [45],
             "body": {
               "id": 260,
               "nodeType": "Block",
               "src": "2056:185:1",
               "statements": [
                 {
-                  "assignments": [
-                    230
-                  ],
+                  "assignments": [230],
                   "declarations": [
                     {
                       "constant": false,
@@ -8520,9 +8407,7 @@
                   },
                   "id": 251,
                   "initializationExpression": {
-                    "assignments": [
-                      233
-                    ],
+                    "assignments": [233],
                     "declarations": [
                       {
                         "constant": false,
@@ -8980,10 +8865,7 @@
                       "id": 266,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        4294967278,
-                        4294967278
-                      ],
+                      "overloadedDeclarations": [4294967278, 4294967278],
                       "referencedDeclaration": 4294967278,
                       "src": "2299:7:1",
                       "typeDescriptions": {
@@ -9213,9 +9095,7 @@
                   },
                   "id": 302,
                   "initializationExpression": {
-                    "assignments": [
-                      281
-                    ],
+                    "assignments": [281],
                     "declarations": [
                       {
                         "constant": false,

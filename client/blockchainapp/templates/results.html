@@ -1,80 +1,70 @@
-{% extends "layouts/base.html" %}
+{% extends "layouts/base.html" %} {% block content %}
 
-{% block content %}
- 
-    <div class="container">
-      {% for election in elections %}
-      <div class="card custom-card my-3 shadow">
-        <div class="card-body">
-          <h1>{{election.region | upper}}</h1>
-          <h2>Choose your leader</h2>
-          <br />
+<div class="container">
+  {% for election in elections %}
+  <div class="card custom-card my-3 shadow">
+    <div class="card-body">
+      <h1>{{election.region | upper}}</h1>
+      <h2>Choose your leader</h2>
+      <br />
 
-          <!-- <div> FORM KO SATTA -->
-            <div>
-           
-            <div class="art-layout-cell layout-item-0">
-              <div class="card">
-                <p style="text-align: center" class="mt-5">
-                  <marquee>
-                    <span
-                      style="
-                        font-weight: bold;
-                        font-family: 'Courier New';
-                        font-size: 20px;
-                      "
-                    >
-                      VOTING CLOSED IN - {{election.expiry_date}}
-                    </span>
-                  </marquee>
-                </p>
-                <hr class="m-5" />
-                <div class="card-body">
-                  <div class="row">
-                    {% for candidate in election.candidate_set.all %}
-                    <div class="col">
-                      <div class="card h-100">
-                        <img
-                          src="{{  candidate.user.image.url }}"
-                          class="img-thumbnail"
-                          alt="KPOLI"
-                        />
-                        <div class="card-body">
-                          <h5 class="card-title">
-                            {{candidate.user.first_name | title}}
-                            {{candidate.user.last_name | title}}
-                          </h5>
-                          <p class="card-text">
-                            Lorem ipsum, dolor sit amet consectetur adipisicing
-                            elit. Minima amet, corporis nobis accusamus animi
-                            minus placeat distinctio asperiores possimus
-                            corrupti sint tenetur officiis saepe suscipit nam
-                            aspernatur alias voluptatem quas!
-                          </p>
-                        </div>
-
-                        <div class="card">
-                          <div class="card-footer">
-                            Votes: {{candidate.votes}}
-                          </div>
-                        </div>
-      
-                      </div>
+      <!-- <div> FORM KO SATTA -->
+      <div>
+        <div class="art-layout-cell layout-item-0">
+          <div class="card">
+            <p style="text-align: center" class="mt-5">
+              <marquee>
+                <span
+                  style="
+                    font-weight: bold;
+                    font-family: 'Courier New';
+                    font-size: 20px;
+                  "
+                >
+                  VOTING CLOSED IN - {{election.expiry_date}}
+                </span>
+              </marquee>
+            </p>
+            <hr class="m-5" />
+            <div class="card-body">
+              <div class="row">
+                {% for candidate in election.candidate_set.all %}
+                <div class="col">
+                  <div class="card h-100">
+                    <img
+                      src="{{  candidate.user.image.url }}"
+                      class="img-thumbnail"
+                      alt="KPOLI"
+                    />
+                    <div class="card-body">
+                      <h5 class="card-title">
+                        {{candidate.user.first_name | title}}
+                        {{candidate.user.last_name | title}}
+                      </h5>
+                      <p class="card-text">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing
+                        elit. Minima amet, corporis nobis accusamus animi minus
+                        placeat distinctio asperiores possimus corrupti sint
+                        tenetur officiis saepe suscipit nam aspernatur alias
+                        voluptatem quas!
+                      </p>
                     </div>
-                    {% endfor %}
+
+                    <div class="card">
+                      <div class="card-footer">Votes: {{candidate.votes}}</div>
+                    </div>
                   </div>
                 </div>
+                {% endfor %}
               </div>
             </div>
-           
-          
           </div>
         </div>
       </div>
-
-      {% endfor %}
     </div>
+  </div>
 
-   
- 
+  {% endfor %}
+</div>
+
 {% endblock content %}

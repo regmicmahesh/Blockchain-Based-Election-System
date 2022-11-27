@@ -1,148 +1,153 @@
-{% extends "layouts/base.html" %}
+{% extends "layouts/base.html" %} {% block content %}
 
-{% block content %}
+<style>
+  .custom-card {
+    border-color: #097da1;
+    border-width: 2.5px;
+  }
+  h1 {
+    text-align: center;
+    color: rgb(0, 121, 158);
+  }
+  h2 {
+    text-align: center;
+    font-size: smaller;
+    color: rgb(0, 121, 158);
+  }
+</style>
 
-    <style>
-      .custom-card {
-        border-color: #097da1;
-        border-width: 2.5px;
-      }
-      h1 {
-        text-align: center;
-        color: rgb(0, 121, 158);
-      }
-      h2 {
-        text-align: center;
-        font-size: smaller;
-        color: rgb(0, 121, 158);
-      }
-    </style>
-  
-    <div class="container">
-      {% for election in elections %}
-      <div class="card custom-card my-3 shadow">
-        <div class="card-body">
-          <h1>{{election.region | upper}}</h1>
-          <h2>Choose your leader</h2>
-          <br />
+<div class="container">
+  {% for election in elections %}
+  <div class="card custom-card my-3 shadow">
+    <div class="card-body">
+      <h1>{{election.region | upper}}</h1>
+      <h2>Choose your leader</h2>
+      <br />
 
-          <form method="post" id="form" enctype="multipart/form-data">
-            {% csrf_token %}
-            <div class="art-layout-cell layout-item-0">
-              <div class="card">
-                <p style="text-align: center" class="mt-5">
-                  <marquee>
-                    <span
-                      style="
-                        font-weight: bold;
-                        font-family: 'Courier New';
-                        font-size: 20px;
-                      "
-                    >
-                      VOTING CLOSING IN - {{election.expiry_date}}
-                    </span>
-                  </marquee>
-                </p>
-                <hr class="m-5" />
-                <div class="card-body">
-                  <div class="row">
-                    {% for candidate in election.candidate_set.all %}
-                    <div class="col">
-                      <div class="card h-100">
-                        <img
-                          src="{{  candidate.user.image.url }}"
-                          class="img-thumbnail"
-                          alt="KPOLI"
-                        />
-                        <div class="card-body">
-                          <h5 class="card-title">
-                            {{candidate.user.first_name | title}}
-                            {{candidate.user.last_name | title}}
-                          </h5>
-                          <p class="card-text">
-                            Lorem ipsum, dolor sit amet consectetur adipisicing
-                            elit. Minima amet, corporis nobis accusamus animi
-                            minus placeat distinctio asperiores possimus
-                            corrupti sint tenetur officiis saepe suscipit nam
-                            aspernatur alias voluptatem quas!
-                          </p>
-                        </div>
-
-                        <div class="card-footer">
-                          {{candidate.user.first_name | title}}
-                          {{candidate.user.last_name | title}} <input
-                          type="checkbox" name="votedId" id="" value="{{candidate.user.pk}}" />
-                        </div>
-                      </div>
+      <form method="post" id="form" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="art-layout-cell layout-item-0">
+          <div class="card">
+            <p style="text-align: center" class="mt-5">
+              <marquee>
+                <span
+                  style="
+                    font-weight: bold;
+                    font-family: 'Courier New';
+                    font-size: 20px;
+                  "
+                >
+                  VOTING CLOSING IN - {{election.expiry_date}}
+                </span>
+              </marquee>
+            </p>
+            <hr class="m-5" />
+            <div class="card-body">
+              <div class="row">
+                {% for candidate in election.candidate_set.all %}
+                <div class="col">
+                  <div class="card h-100">
+                    <img
+                      src="{{  candidate.user.image.url }}"
+                      class="img-thumbnail"
+                      alt="KPOLI"
+                    />
+                    <div class="card-body">
+                      <h5 class="card-title">
+                        {{candidate.user.first_name | title}}
+                        {{candidate.user.last_name | title}}
+                      </h5>
+                      <p class="card-text">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing
+                        elit. Minima amet, corporis nobis accusamus animi minus
+                        placeat distinctio asperiores possimus corrupti sint
+                        tenetur officiis saepe suscipit nam aspernatur alias
+                        voluptatem quas!
+                      </p>
                     </div>
-                    {% endfor %}
-                  </div>
-                </div>
-              </div>
-            </div>
-            <center>
-              <button
-                type="button"
-                class="btn btn-primary my-3 btn-block"
-                data-toggle="modal"
-                data-target="#exampleModal"
-              >
-                Vote
-              </button>
-            </center>
 
-            <!-- Modal -->
-            <div
-              class="modal fade"
-              id="exampleModal"
-              tabindex="-1"
-              role="dialog"
-              aria-labelledby="exampleModalLabel"
-              aria-hidden="true"
-            >
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Vote</h5>
-                    <button
-                      type="button"
-                      class="close"
-                      data-dismiss="modal"
-                      aria-label="Close"
-                    >
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">Vote Your Leader</div>
-                  <div class="modal-footer">
-                    <button
-                      type="button"
-                      class="btn btn-secondary"
-                      data-dismiss="modal"
-                    >
-                      No
-                    </button>
-                    <button type="button" onclick="submitForm()" class="btn btn-primary">Yes</button>
+                    <div class="card-footer">
+                      {{candidate.user.first_name | title}}
+                      {{candidate.user.last_name | title}}
+                      <input
+                        type="checkbox"
+                        name="votedId"
+                        id=""
+                        value="{{candidate.user.pk}}"
+                      />
+                    </div>
                   </div>
                 </div>
+                {% endfor %}
               </div>
             </div>
-          </form>
+          </div>
         </div>
-      </div>
+        <center>
+          <button
+            type="button"
+            class="btn btn-primary my-3 btn-block"
+            data-toggle="modal"
+            data-target="#exampleModal"
+          >
+            Vote
+          </button>
+        </center>
 
-      {% endfor %}
+        <!-- Modal -->
+        <div
+          class="modal fade"
+          id="exampleModal"
+          tabindex="-1"
+          role="dialog"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Vote</h5>
+                <button
+                  type="button"
+                  class="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">Vote Your Leader</div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-dismiss="modal"
+                >
+                  No
+                </button>
+                <button
+                  type="button"
+                  onclick="submitForm()"
+                  class="btn btn-primary"
+                >
+                  Yes
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
     </div>
+  </div>
 
-    <script>
-      function submitForm(){
+  {% endfor %}
+</div>
 
-        form = document.getElementById("form")
-        form.submit()
-
-      }
-      
-      
-    </script>
+<script>
+  function submitForm() {
+    form = document.getElementById("form");
+    form.submit();
+  }
+</script>
 
 {% endblock %}
